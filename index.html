@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ffd9e2">
+<!-- ЗДЕСЬ МЕНЯТЬ: заголовок вкладки и превью ссылки в мессенджерах -->
+<title>Для самой дорогой мамы 💗</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Для самой дорогой мамы 💗">
+<meta property="og:description" content="Маленькая открытка с большой любовью">
+<!-- Для превью нужна картинка по полному адресу после публикации сайта: -->
+<!-- <meta property="og:image" content="https://ВАШ-САЙТ/images/photo1.jpg"> -->
+<!-- Шрифты: без интернета включатся системные (см. css/style.css) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Nunito:wght@400;700&display=swap&subset=cyrillic" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="bg" aria-hidden="true"></div>
+<button id="musicBtn" aria-label="Включить или выключить музыку">🎵</button>
+<div id="dots" aria-hidden="true"></div>
+
+<main>
+  <!-- 1. Старт -->
+  <section class="screen" id="s0">
+    <div class="glass center">
+      <h1 id="startTitle"></h1>
+      <button class="btn pulse" id="openBtn">Нажми, чтобы открыть</button>
+    </div>
+  </section>
+
+  <!-- 2. Конверт -->
+  <section class="screen" id="s1">
+    <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Открыть конверт">
+      <div class="env-card">💌<br><span id="envTo"></span></div>
+      <div class="env-back"></div>
+      <div class="env-flap"></div>
+      <div class="env-front"></div>
+    </div>
+    <p class="hint" id="envHint">Нажми на конверт</p>
+    <button class="btn hidden" data-next>Читать</button>
+  </section>
+
+  <!-- 3. Поздравление -->
+  <section class="screen" id="s2">
+    <div class="glass">
+      <h2 id="greetTitle"></h2>
+      <p id="typed" class="typed"></p>
+    </div>
+    <button class="btn hidden" data-next>Дальше</button>
+  </section>
+
+  <!-- 4. Причины -->
+  <section class="screen" id="s3">
+    <h2>Почему мы тебя любим</h2>
+    <p class="hint">Открой все карточки</p>
+    <div class="cards" id="cards"></div>
+    <button class="btn hidden" data-next>Дальше</button>
+  </section>
+
+  <!-- 5. Галерея -->
+  <section class="screen" id="s4">
+    <h2>Наша галерея</h2>
+    <div class="stack" id="stack"></div>
+    <div class="row">
+      <button class="round" id="prev" aria-label="Назад">‹</button>
+      <span id="counter"></span>
+      <button class="round" id="next" aria-label="Вперёд">›</button>
+    </div>
+    <button class="btn" data-next>Дальше</button>
+  </section>
+
+  <!-- 6. Игра -->
+  <section class="screen" id="s5">
+    <h2>Поймай сердечки</h2>
+    <div class="row"><span id="timer">15</span><span id="score">💗 0</span></div>
+    <div class="game" id="game"></div>
+    <p id="gameMsg" class="hint">Нажимай на сердечки за 15 секунд</p>
+    <button class="btn" id="gameStart">Начать</button>
+    <button class="btn hidden" id="gameNext" data-next>Дальше</button>
+  </section>
+
+  <!-- 7. Финал -->
+  <section class="screen" id="s6">
+    <canvas id="heartCanvas" aria-hidden="true"></canvas>
+    <div class="glass center final">
+      <h2 id="finalText"></h2>
+      <button class="btn" id="again">Ещё раз</button>
+    </div>
+  </section>
+</main>
+
+<!-- Полноэкранный просмотр фото -->
+<div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true">
+  <button id="lbClose" class="round close" aria-label="Закрыть">✕</button>
+  <div id="lbImg"></div>
+  <p id="lbCap"></p>
+</div>
+
+<script src="js/content.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
